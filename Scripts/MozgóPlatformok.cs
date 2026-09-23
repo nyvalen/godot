@@ -2,8 +2,13 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class MoveChildren : Node2D
+public partial class MozgóPlatformok : Node
 {
+	// értékek
+	public static short i = 0;
+	public static short korlát = 30;
+	public static short mozgásértéke = 4;
+	
 	// mozgás
 	public async Task idő() {
 		await ToSignal(GetTree().CreateTimer(0.001), SceneTreeTimer.SignalName.Timeout);
@@ -14,17 +19,17 @@ public partial class MoveChildren : Node2D
 		Godot.Collections.Array<Node> nodes = GetChildren();
 		
 		while (true) {
-			for (int i = 0; i < 30; i++) {
+			for (i = 0; i < korlát; ++i) {
 				foreach (StaticBody2D child in nodes) {
-					child.Position += Vector2.Right * 2;
+					child.Position += Vector2.Up * mozgásértéke;
 				}
 			
 				await idő();
 			}
 		
-			for (int i = 0; i < 30; i++) {
+			for (i = 0; i < korlát; ++i) {
 				foreach (StaticBody2D child in nodes) {
-					child.Position -= Vector2.Right * 2;
+					child.Position -= Vector2.Up * mozgásértéke;
 				}
 			
 				await idő();
