@@ -13,7 +13,7 @@ config_version=5
 config/name="bálint-godot"
 run/main_scene="uid://b56at6ytrvikt"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
-config/icon="res://Textures/icon.svg"
+config/icon="uid://cgi6kafqbgp5o"
 
 [display]
 

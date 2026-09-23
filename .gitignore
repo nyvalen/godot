@@ -2,3 +2,5 @@
 .godot/
 /android/
 /Scripts/.idea
+bálint-godot.sln
+bálint-godot.csproj
